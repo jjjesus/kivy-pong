@@ -20,6 +20,12 @@
 #
 <PongGame>:    
 
+    # Set an object property that can be referenced in code
+    # The property name is 'ball'
+    # The value of the property 'pong_ball' is the id of the 
+    # child widget instance below
+    ball: pong_ball
+
     # Every widget has its own Canvas on which to draw
     canvas:
 
@@ -45,5 +51,6 @@
 
     # Child widget
     PongBall:
-        center: self.parent.center
-
+        # This id is referenced 
+        id: pong_ball
+        center: self.parent.center 
