@@ -13,6 +13,14 @@
         Ellipse:
             pos: self.pos
             size: self.size    
+<PongPaddle>:
+    size: 25, 200
+    canvas:
+        Rectangle:
+            pos:self.pos
+            size:self.size
+
+
 
 # PongGame Widget
 # A block defined with a class name inside the < and > characters is 
@@ -25,6 +33,9 @@
     # The value of the property 'pong_ball' is the id of the 
     # child widget instance below
     ball: pong_ball
+
+    player1: player_left
+    player2: player_right
 
     # Every widget has its own Canvas on which to draw
     canvas:
@@ -40,17 +51,30 @@
         font_size: 70  
         center_x: root.width / 4
         top: root.top - 50
-        text: "0"
+        text: str(root.player1.score)
         
     # Child widget
     Label:
         font_size: 70  
         center_x: root.width * 3 / 4
         top: root.top - 50
-        text: "0"
+        text: str(root.player2.score)
 
     # Child widget
     PongBall:
         # This id is referenced 
         id: pong_ball
-        center: self.parent.center 
+        center: self.parent.center
+
+        
+    PongPaddle:
+        id: player_left
+        x: root.x
+        center_y: root.center_y
+        
+    PongPaddle:
+        id: player_right
+        x: root.width-self.width
+        center_y: root.center_y
+        
+
