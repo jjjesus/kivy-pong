@@ -1,0 +1,38 @@
+#:kivy 1.0.9
+
+
+# The name of the kv file, e.g. pong.kv, must match the name of the app, 
+# e.g. PongApp (the part before the App ending).
+#
+# The first line above is required in every kv file. 
+
+
+# PongGame Widget
+# A block defined with a class name inside the < and > characters is 
+# a Widget rule. It will be applied to any instance of the named class.
+#
+<PongGame>:    
+
+    # Every widget has its own Canvas on which to draw
+    canvas:
+
+        # Draw a rectangle on the canvas
+        # This rectange forms the center bar
+        Rectangle:
+            pos: self.center_x - 5, 0
+            size: 10, self.height
+            
+    # Child widget
+    Label:
+        font_size: 70  
+        center_x: root.width / 4
+        top: root.top - 50
+        text: "0"
+        
+    # Child widget
+    Label:
+        font_size: 70  
+        center_x: root.width * 3 / 4
+        top: root.top - 50
+        text: "0"
+
