@@ -6,6 +6,13 @@
 #
 # The first line above is required in every kv file. 
 
+# PongBall Widget
+<PongBall>:
+    size: 50, 50 
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size    
 
 # PongGame Widget
 # A block defined with a class name inside the < and > characters is 
@@ -35,4 +42,8 @@
         center_x: root.width * 3 / 4
         top: root.top - 50
         text: "0"
+
+    # Child widget
+    PongBall:
+        center: self.parent.center
 
